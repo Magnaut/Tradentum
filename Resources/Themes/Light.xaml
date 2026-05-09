@@ -1,0 +1,102 @@
+﻿<!-- File: Tradentum/Resources/Themes/Light.xaml -->
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- ================= ЦВЕТА ================= -->
+    <Color x:Key="PrimaryBackgroundColor">#F8F9FA</Color>
+    <Color x:Key="SecondaryBackgroundColor">#FFFFFF</Color>
+    <Color x:Key="MenuBackgroundColor">#E9ECEF</Color>
+    <Color x:Key="StatusBarBackgroundColor">#DEE2E6</Color>
+    <Color x:Key="PrimaryForegroundColor">#212529</Color>
+    <Color x:Key="SecondaryForegroundColor">#6C757D</Color>
+    <Color x:Key="AccentColor">#0078D4</Color>
+    <Color x:Key="BorderColor">#CED4DA</Color>
+    <Color x:Key="RowBackgroundColor">#FFFFFF</Color>
+    <Color x:Key="RowAltBackgroundColor">#F8F9FA</Color>
+    <Color x:Key="SelectionColor">#E3F2FD</Color>
+    <Color x:Key="StatusBarForegroundColor">#495057</Color>
+
+    <!-- ================= КИСТИ ================= -->
+    <SolidColorBrush x:Key="PrimaryBackground" Color="{StaticResource PrimaryBackgroundColor}" />
+    <SolidColorBrush x:Key="SecondaryBackground" Color="{StaticResource SecondaryBackgroundColor}" />
+    <SolidColorBrush x:Key="MenuBackground" Color="{StaticResource MenuBackgroundColor}" />
+    <SolidColorBrush x:Key="StatusBarBackground" Color="{StaticResource StatusBarBackgroundColor}" />
+    <SolidColorBrush x:Key="PrimaryForeground" Color="{StaticResource PrimaryForegroundColor}" />
+    <SolidColorBrush x:Key="SecondaryForeground" Color="{StaticResource SecondaryForegroundColor}" />
+    <SolidColorBrush x:Key="AccentBrush" Color="{StaticResource AccentColor}" />
+    <SolidColorBrush x:Key="BorderBrush" Color="{StaticResource BorderColor}" />
+    <SolidColorBrush x:Key="RowBackground" Color="{StaticResource RowBackgroundColor}" />
+    <SolidColorBrush x:Key="RowAltBackground" Color="{StaticResource RowAltBackgroundColor}" />
+    <SolidColorBrush x:Key="SelectionBrush" Color="{StaticResource SelectionColor}" />
+    <SolidColorBrush x:Key="StatusBarForeground" Color="{StaticResource StatusBarForegroundColor}" />
+
+    <!-- ================= СТИЛИ КОНТРОЛОВ ================= -->
+
+    <!-- 🔹 Button -->
+    <Style TargetType="Button">
+        <Setter Property="Background" Value="{StaticResource AccentBrush}" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Padding" Value="12,6" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" 
+                            CornerRadius="4" 
+                            Padding="{TemplateBinding Padding}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Opacity" Value="0.9" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" Value="0.5" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- 🔹 DataGrid -->
+    <Style TargetType="DataGrid">
+        <Setter Property="Background" Value="{StaticResource SecondaryBackground}" />
+        <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="GridLinesVisibility" Value="Horizontal" />
+        <Setter Property="HorizontalGridLinesBrush" Value="{StaticResource BorderBrush}" />
+        <Setter Property="RowBackground" Value="{StaticResource RowBackground}" />
+        <Setter Property="AlternatingRowBackground" Value="{StaticResource RowAltBackground}" />
+        <Setter Property="HeadersVisibility" Value="Column" />
+        <Setter Property="ColumnHeaderStyle">
+            <Setter.Value>
+                <Style TargetType="DataGridColumnHeader">
+                    <Setter Property="Background" Value="{StaticResource SecondaryBackground}" />
+                    <Setter Property="Foreground" Value="{StaticResource SecondaryForeground}" />
+                    <Setter Property="FontWeight" Value="SemiBold" />
+                    <Setter Property="Padding" Value="8,6" />
+                    <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}" />
+                    <Setter Property="BorderThickness" Value="0,0,0,1" />
+                </Style>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- 🔹 TextBox -->
+    <Style TargetType="TextBox">
+        <Setter Property="Background" Value="{StaticResource SecondaryBackground}" />
+        <Setter Property="Foreground" Value="{StaticResource PrimaryForeground}" />
+        <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}" />
+        <Setter Property="Padding" Value="6,4" />
+        <Setter Property="BorderThickness" Value="1" />
+    </Style>
+
+    <!-- 🔹 ScrollBar (базовая настройка для WPF) -->
+    <Style TargetType="ScrollBar">
+        <Setter Property="Width" Value="10" />
+        <Setter Property="Background" Value="{StaticResource PrimaryBackground}" />
+        <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}" />
+    </Style>
+</ResourceDictionary>

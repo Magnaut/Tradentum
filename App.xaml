@@ -1,0 +1,29 @@
+﻿<Application x:Class="Tradentum.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Tradentum"
+             xmlns:converters="clr-namespace:Tradentum.Converters">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+
+                <!-- 🔹 Глобальные конвертеры -->
+                <ResourceDictionary>
+                    <converters:SignToBrushConverter x:Key="SignToBrush" 
+                                         PositiveBrush="#4CAF50" 
+                                         NegativeBrush="#F44336" 
+                                         ZeroBrush="#9E9E9E" />
+                    <converters:BoolToInverseVisibilityConverter x:Key="InverseBoolToVisibility" />
+                    <converters:EnumToDescriptionConverter x:Key="EnumToDesc" />
+                </ResourceDictionary>
+
+                <!-- 🔹 Тема оформления по умолчанию -->
+                <ResourceDictionary Source="Resources/Themes/Light.xaml" />
+
+                <!-- 🔹 Глобальные стили (раскомментируйте после создания файла) -->
+                <!-- <ResourceDictionary Source="Resources/Styles/GlobalStyles.xaml" /> -->
+
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
